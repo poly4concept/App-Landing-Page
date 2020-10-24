@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+#reglink{
+    background-color: blue; 
+    color: white;
+}
+#reglink:hover{
+    outline: 5px white;
+    background-color:  rgba(0, 0, 0, 0.5);
+  }
