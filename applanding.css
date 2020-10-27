@@ -35,3 +35,9 @@ section.jumbotron{
 #img-device{
     transform: translate(80px, 100px)scale(2,2);
 }
+#about{
+    margin-top: 200px;
+}
+.tertiary-btn{
+    color: blue;
+}
