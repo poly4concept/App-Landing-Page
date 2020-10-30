@@ -18,6 +18,17 @@ section.jumbotron{
     transform: rotate(-40deg);
     
 }
+#transited{
+    width: 150px;
+    height: 3px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    background-color: #ff0a6c;
+    transition: width 2s linear;
+}
+#transited:hover{
+    width: 0px;
+}
 .primary-btn{
     background-color: #2d27ff;
 }
@@ -45,4 +56,23 @@ section.jumbotron{
     border-radius: 50%;
     height: 10px;
     width: 10px;
+}
+.text-left,.text-right{
+    font-size: smaller;
+}
+.card-title{
+    font-size: medium;
+}
+p.card-subtitle{
+    font-size: smaller;
+}
+footer.contact-detail{
+    margin-bottom: -20px;
+}
+.contact-detail a{
+    padding: 8px;
+    font-size: 15px;
+}
+#team{
+    margin-top: 100px;
 }
