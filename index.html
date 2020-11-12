@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    * {
+        box-sizing: border-box;
+    }
+    html{
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    main{
+        overflow: hidden;
+    }
+    section.jumbotron{
+        position: relative;
+    }
+    .des{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .design{
+        position: absolute;
+        width: 100%;
+        height: 40rem;
+        border-radius: 40px;
+        background-color: #ff0a6c;
+        top: -350px;
+        left: -160px;
+        transform: rotate(-40deg);
+        
+    }
+    .inner-top-design{
+        display: none;
+    }
+    #transited{
+        width: 150px;
+        height: 3px;
+        margin-top: -5px;
+        margin-bottom: 10px;
+        background-color: #ff0a6c;
+        transition: width 2s linear;
+    }
+    #transited:hover{
+        width: 0px;
+    }
+    .primary-btn{
+        background-color: #2d27ff;
+    }
+    .primary-btn:hover{
+        background-color: #1e1993;
+    }
+    .secondary-btn{
+        background-color: #ff0a6c;
+        color: #fff;
+    }
+    .secondary-btn:hover{
+        background-color: #fff;
+        color: #ff0a6c;
+    }
+    #img-device{
+        transform: translate(80px, 100px)scale(2,2);
+    }
+    #about{
+        margin-top: 200px;
+    }
+    .tertiary-btn{
+        color: blue;
+    }
+    .carousel-indicators li{
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+    }
+    .text-left,.text-right{
+        font-size: smaller;
+    }
+    .card-title{
+        font-size: medium;
+    }
+    p.card-subtitle{
+        font-size: smaller;
+    }
+    footer.contact-detail{
+        margin-bottom: -20px;
+    }
+    .contact-detail a{
+        padding: 8px;
+        font-size: 15px;
+    }
+    #team{
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    .footer-headings{
+        font-size: medium;
+        margin-bottom: 20px;
+    }
+    .footer-headings a{
+        margin: 10px;
+    }
+    footer{
+        position: relative;
+    }
+    .bottom-design{
+        position: absolute;
+        width: 100%;
+        height: 20rem;
+        background-color: #ff0a6c;
+        transform: rotate(-30deg);
+        top: -40px;
+        left: 120px;
+        border: #e0095f solid 25px;
+        border-radius: 25px;
+        z-index: -3;
+    }
+    .page-design {
+        width: 100vw;
+        height: 100vw;
+    }
+    .page-design.right {
+        transform: rotateZ(-40deg) translateX(65%) translateY(10%);
+        z-index: -2;
+        border-radius: 150px 0 0 0;
+        background-color: rgba(235, 213, 191, 0.425);
+    }
+    .page-design.left {
+        transform: rotateZ(-40deg) translateX(-20%) translateY(-65%);
+        border-radius: 0 0 150px 0;
+        z-index: -1;
+        background-color: rgba(235, 213, 191, 0.425);
+    
+    }
+    .bottom-design-container{
+        width: 100%;
+        height: 100vh;
+    }
+    .layer1{
+        transform: rotateZ(-30deg) translateX(9%) translateY(2%);
+        background-color:  #fc1a75;
+        z-index: -1;
+        border-radius: 0 40px 0 0;
+    }
+    .layer2{
+        transform: rotateZ(-30deg) translateX(0%) translateY(-3%);
+        z-index: -1;
+        border-radius: 0 40px 0 0;
+        background-color:  #fc1a75;
+    }
+    @media screen and (max-width:991px) {
+        body {
+            background-color: var(--primary-light);
+        }
+        .top-design{
+            width: 100%;
+            margin: 0%;
+            height: 50rem;
+            transform: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0%;
+            border-radius: 0 0  0 30px;
+        }
+        .inner-top-design{
+            width: 30vw;
+            height: 30vw;
+            min-height: 100px;
+            min-width: 100px;
+            background-color:  black;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 3; 
+        }
+        .page-design{
+            display: none;
+        }
+        footer .container{
+            margin-left: 80px;
+        }
+        .bottom-design-container{
+            height: 550px;
+            width: 120%;
+            transform: translateX(-10%) translateY(-10%);
+            z-index: -1;
+        }
+        .layer1, .layer2{
+            transform: none;
+            border-radius: 50% 50% 0 0;
+        }
+        .layer2{
+            transform: translateY(-5%);
+        }
+    }</head>
+<body>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background-color: rgba(0, 0, 0, 0.5);">
+      <a class="navbar-brand" href="#">
+        <img src="Images/Brand-logo.svg"   alt="brand-logo" loading="lazy">
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav text-uppercase mr-5 ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="jumbotron">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#events" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#teams" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+
+          <a  href="#"  class="btn my-2 my-sm-0  text-white primary-btn" id="reglink">REGISTER</a>
+        </div>
+      </nav> 
+      <main class="page-content">
+        <section class="jumbotron jumbotron-fluid p-0 bg-transparent"> 
+          <div class="design des top-design">
+          </div>
+          <div class="inner-top-design"></div>
+          <div class="container  pt-5">
+            <div class="row py-5 ">
+              <div class="col-md-6 col-12 hero-text">
+                <h1 class="h1 text-white">The perfect landing page for your app</h1>
+                <p class="lead text-white py-4">Sagittis, nisl turpis consectetur amet, scelerisque facilisis nibh. Mi consequat in etiam faucibus nec velit vel eleifend accumsan lobortis ullamcorper</p>
+                <a  href="#"  class="btn text-white primary-btn mr-3">REGISTER NOW</a>
+                <a  href="#"  class="btn  border border-white  secondary-btn ">LEARN MORE</a>
+              </div>
+              <div class="col-md-6 col-12 hero-img">
+                <img src="Images/Devices.png" alt="laptop-and-phone" id="img-device" class="img-fluid device-img">
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="page-design des bg-primary-light right"></div>
+        <section class="about py-5" id="about"> 
+          <div class="mt-5 container">
+            <div class="row py-5">
+              <div class="col-md-6 col-12">
+                <h3 style="color: #ff0a6c;" class="h2">We are the Best Online Software Firm in Africa</h3>
+                <div class="inner-top-design animated" id="transited" data-animation-type="roll">
+                </div>
+                <p class="text-dark">Tincidunt dignissim quisque in turpisut nulla eu et. Id eget sit eleifend accumsan lobortis ullamcorper. Odio risus cras in pellentesque. Blandit bibendum donec viverra nibh. Eget ultrices gravida eleifend est, blandit mi malesuada pulvinar ut.</p>
+                <p class="text-dark">Sagittis gravida proin elit ipsum tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est id tristique elementum nulla nunc nisl. Lectus vitae egt a quam risus dignissim tellus. Tincidunt dignissim quisque in turpisut nulla eu et. Id eget sit eleifend accumsan lobortis ullamcorper.</p>
+                <a  href="#"  class="btn text-white primary-btn mr-3">MORE ABOUT US <i class="ml-2 fas fa-chevron-right"></i></a>
+                <a  href="#"  class="btn tertiary-btn "><i class="mr-2 fas fa-play-circle"></i><span class="border-primary border-bottom">WATCH VIDEO</span></a>
+              </div>
+              <div class="col-md-6 col-12">
+                <img src="Images/Team.svg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="events my-2" id="events">
+          <div class="container">
+            <h2 class="text-uppercase" style="color: #ff0a6c;">Top Events</h2>
+            <div class="inner-top-design animated" id="transited" data-animation-type="roll">
+            </div>
+            <div id="carouselExampleIndicators"  class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators" style="margin-bottom: -30px;">
+                <li data-target="#carouselExampleIndicators" style="background-color: #ff0a6c;" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" style="background-color: #ff0a6c;" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" style="background-color: #ff0a6c;" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event1.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event2.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event3.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event4.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event1.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event2.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event3.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event4.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                   </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event1.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event2.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event3.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h5 class="card-title">How to Use Bootdev to Earn Cash</h5>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <div class="card m-2">
+                        <img src="Images/event4.png"  class="card-img-top" alt="newsImage">
+                        <div class="card-body p-2" style="color: #ff0a6c;">
+                            <div class="row">
+                              <div class="col-6 text-left">31th Dec. 2020</div>
+                              <div class="col-6 text-right"><i class="fas fa-map-marker-alt"></i>Youtube</div>
+                            </div>
+                            <h6 class="card-title">How to Use Bootdev to Earn Cash</h6>
+                              <a  href="#"  class="btn tertiary-btn ">Read More </span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                   </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section class="team" id="team">
+          <div class="page-design des left bg-primary-light"></div>
+          <div class="container">
+            <h2 class="text-uppercase" style="color: #ff0a6c;">Our Teams</h2>
+            <div class="inner-top-design animated" id="transited" data-animation-type="roll">
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_1.png" alt="Member1">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Abraham Bator</h6>
+                    <p class="card-subtitle text-center">Product Paradigm Developer</p>
+                    <footer class="contact-detail text-center">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_2.png" alt="Member2">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Marley Rhiel Madsen</h6>
+                    <p class="card-subtitle text-center">District Branding Specialist</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_3.png" alt="Member3">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Roger Culhane</h6>
+                    <p class="card-subtitle text-center">Corporate Brand Agent</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_4.png" alt="Member4">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Tiana Saris</h6>
+                    <p class="card-subtitle text-center">Lead Group Engineer</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_5.png" alt="Member5">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Abram Passaquindici</h6>
+                    <p class="card-subtitle text-center">Lead Usability Technician</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_6.png" alt="Member6">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Gustavo Passaquindici</h6>
+                    <p class="card-subtitle text-center">Chief Program Producer</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_7.png" alt="Member7">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Jaxson Septimus</h6>
+                    <p class="card-subtitle text-center">Product Solutions Executive</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_8.png" alt="Member8">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Alfonso Geidt</h6>
+                    <p class="card-subtitle text-center">Chief Branding Architect</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_9.png" alt="Member9">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Aspen Press</h6>
+                    <p class="card-subtitle text-center">Internal Data Liaison</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="card m-2" style="color: #ff0a6c;">
+                  <img src="Images/Member_10.png" alt="Member10">
+                  <div class="card-body">
+                    <h6 class="card-title text-center">Hanna Korsgaard</h6>
+                    <p class="card-subtitle text-center">Internal Factors Developers</p>
+                    <footer class="contact-detail text-center" style="margin-top: 10px;">
+                      <a href="#"><i class="fab fa-twitter"></i></a>  
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer id="last">
+        <div class="bottom-design-container  des">
+          <div class="layer1 des"></div>
+          <div class="layer2 des"></div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-lg-6 col-md-12 col-12">
+              <div class="row justify-content-center text-white">
+                <div class="col-lg-4 col-md-4 col-6">
+                  <h4 class="footer-headings">About Us</h4>
+                  <h4 class="footer-headings">Services</h4>
+                  <h4 class="footer-headings">Pricing</h4>
+                  <h4 class="footer-headings">Contact</h4>
+                  <h4 class="footer-headings">News</h4>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6">
+                  <h4 class="footer-headings">Events</h4>
+                  <h4 class="footer-headings">Apps</h4>
+                  <h4 class="footer-headings">Customers</h4>
+                  <h4 class="footer-headings">Directory</h4>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6">
+                  <h4 class="footer-headings">
+                    <img src="Images/Brand-logo.svg"   alt="brand-logo" loading="lazy">
+                  </h4>
+                  <h4 class="footer-headings">Paolo Alto,NA <p>522357</p></h4>
+                  <h4 class="footer-headings" style="font-size: small;">Info@Bootdev.Com <p>1234567890</p></h4>
+                  <h4 class="footer-headings">
+                    <a href="#"><i class="fab fa-twitter"></i></a>  
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </h4>
+                </div>
+                <p class="text-center ml-5">© copyright 2020 DSCFUTA. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </footer>
+     </main>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
