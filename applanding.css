@@ -190,3 +190,9 @@ footer{
         transform: translateY(-5%);
     }
 }
+
+@media screen and (max-width:600px) {
+    footer .container{
+        margin-left: 40px;
+    }
+}
